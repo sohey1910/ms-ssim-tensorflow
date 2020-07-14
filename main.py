@@ -2,6 +2,8 @@ import numpy as np
 import tensorflow as tf
 from skimage import data, img_as_float
 
+from comput_ms_ssim import *
+
 image = data.camera()
 img = img_as_float(image)
 rows, cols = img.shape
