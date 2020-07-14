@@ -61,8 +61,8 @@ def tf_ms_ssim(img1, img2, mean_metric=True, level=5):
         img2 = filtered_im2
 
     # list to tensor of dim D+1
-    mssim = tf.pack(mssim, axis=0)
-    mcs = tf.pack(mcs, axis=0)
+    mssim = tf.stack(mssim, axis=0)
+    mcs = tf.stack(mcs, axis=0)
 
     value = (tf.reduce_prod(mcs[0:level-1]**weight[0:level-1])*
                             (mssim[level-1]**weight[level-1]))
